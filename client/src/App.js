@@ -1,37 +1,54 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
 function App() {
 
-  const [backendData, setBackendData] = useState([{}])
+  // const [backendData, setBackendData] = useState([{}])
 
-  useEffect(() => {
-    
-    fetch("/api").then(
+  // useEffect(() => {
 
-      response => response.json()
+  //   fetch("/api").then(
 
-    ).then(
-      data => {
-        setBackendData(data) 
-      }
-    )
+  //     response => response.json()
 
-  }, [])
+  //   ).then(
+  //     data => {
+  //       setBackendData(data)
+  //     }
+  //   )
 
-  return(
+  // }, [])
 
-    <div>
+  // return (
 
-{(typeof backendData.pets === 'undefined') ? (
-        <p>Loading ...</p>
-      ): (
-        backendData.pets.map((pet, i) => (
-          <p key={i}>{pet}</p>
-        ))
-      )}
+  //   <div>
+
+  //     {(typeof backendData.pets === 'undefined') ? (
+  //       <p>Loading ...</p>
+  //     ) : (
+  //       backendData.pets.map((pet, i) => (
+  //         <p key={i}>{pet}</p>
+  //       ))
+  //     )}
+
+  //   </div>
+  // )
+
+  // useEffect(() => {
+
+
+
+  // }, [])
+
+  const [flag, setFlag] = useState(true);
+
+  return (
+    <div className='App'>
+      {flag ? <p>TRUE</p> : <p>FALSE</p>}
+      <button onClick={ () => flag ? setFlag(false) : setFlag(true) } >Click ME!!</button>
 
     </div>
-  )
+  );
+
 }
 
 export default App
