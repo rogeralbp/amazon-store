@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import Header from './components/Header';
+
 
 function App() {
 
-  const [counter, setCounter] = useState(0);
+  //const [counter, setCounter] = useState(0);
 
   useEffect(() => {
 
@@ -10,8 +12,7 @@ function App() {
 
   return (
     <div className='App'>
-      <p>{counter}</p>
-      <button onClick={() => { setCounter( counter + 1 )}}> Press me! </button>
+      < Header/>
     </div>
   )
 }
